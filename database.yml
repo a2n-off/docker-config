@@ -13,3 +13,14 @@ services:
     ports:
       - "27017:27017"
 
+  mariadb-latest:
+    image: mariadb
+    restart: always
+    environment:
+      - MARIADB_USER=dev
+      - MARIADB_PASSWORD=dev
+      - MARIADB_ROOT_PASSWORD=root
+    volumes:
+      - ~/Documents/db-data/mariadb:/var/lib/mysql
+    ports:
+      - "3306:3306"
